@@ -1,7 +1,7 @@
 
 /* IMPORT */
 
-import isPrimitive from 'is-primitive';
+import * as isPrimitive from 'is-primitive';
 
 /* ARE SHALLOW EQUAL */
 
