@@ -1,10 +1,10 @@
 
 /* IMPORT */
 
-import {describe} from 'ava-spec';
-import areShallowEqual from '../dist';
+import {describe} from 'fava';
+import areShallowEqual from '../dist/index.js';
 
-/* ARE SHALLOW EQUAL */
+/* MAIN */
 
 describe ( 'areShallowEqual', it => {
 

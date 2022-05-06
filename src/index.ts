@@ -1,13 +1,11 @@
 
 /* IMPORT */
 
-import * as isPrimitive from 'is-primitive';
+import {isNaN, isPrimitive} from 'is';
 
-/* ARE SHALLOW EQUAL */
+/* MAIN */
 
-const {isNaN} = Number;
-
-function areShallowEqual ( x: any, y: any ): boolean {
+const areShallowEqual = ( x: any, y: any ): boolean => {
 
   if ( x === y ) return true;
 
@@ -21,7 +19,7 @@ function areShallowEqual ( x: any, y: any ): boolean {
 
   return true;
 
-}
+};
 
 /* EXPORT */
 
