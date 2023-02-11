@@ -1,7 +1,7 @@
 
 /* IMPORT */
 
-import {isNaN, isPrimitive} from 'is';
+import {isNaN, isPrimitive} from './utils';
 
 /* MAIN */
 
