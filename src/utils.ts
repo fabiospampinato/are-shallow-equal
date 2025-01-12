@@ -1,22 +1,20 @@
 
 /* MAIN */
 
-const isNaN = ( value: unknown ): boolean => {
+const {isArray} = Array;
 
-  return value !== value;
+const isObject = ( value: unknown ): boolean => {
+
+  return typeof value === 'object' && value !== null;
 
 };
 
-const isPrimitive = ( value: unknown ): value is null | undefined | string | number | boolean | symbol | bigint => {
+const isStriclyEqual = ( x: unknown, y: unknown ): boolean => {
 
-  if ( value === null ) return true;
-
-  const type = typeof value;
-
-  return type !== 'object' && type !== 'function';
+  return ( x === y ) || ( x !== x && y !== y );
 
 };
 
 /* EXPORT */
 
-export {isNaN, isPrimitive};
+export {isArray, isObject, isStriclyEqual};

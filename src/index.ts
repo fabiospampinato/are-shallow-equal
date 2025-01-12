@@ -1,21 +1,43 @@
 
 /* IMPORT */
 
-import {isNaN, isPrimitive} from './utils';
+import {isArray, isObject, isStriclyEqual} from './utils';
 
 /* MAIN */
 
 const areShallowEqual = ( x: any, y: any ): boolean => {
 
-  if ( x === y ) return true;
+  if ( isStriclyEqual ( x, y ) ) return true;
 
-  if ( isNaN ( x ) ) return isNaN ( y );
+  if ( !isObject ( x ) || !isObject ( y ) ) return false;
 
-  if ( isPrimitive ( x ) || isPrimitive ( y ) ) return x === y;
+  if ( isArray ( x ) && isArray ( y ) ) {
 
-  for ( const i in x ) if ( !( i in y ) ) return false;
+    if ( x.length !== y.length ) return false;
 
-  for ( const i in y ) if ( x[i] !== y[i] ) return false;
+    for ( let i = 0, l = x.length; i < l; i++ ) {
+
+      if ( !isStriclyEqual ( x[i], y[i] ) ) return false;
+
+    }
+
+  } else {
+
+    for ( const key in x ) {
+
+      if ( !( key in y ) ) return false;
+
+      if ( !isStriclyEqual ( x[key], y[key] ) ) return false;
+
+    }
+
+    for ( const key in y ) {
+
+      if ( !( key in x ) ) return false;
+
+    }
+
+  }
 
   return true;
 
