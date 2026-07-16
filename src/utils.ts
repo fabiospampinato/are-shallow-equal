@@ -9,7 +9,7 @@ const isObject = ( value: unknown ): boolean => {
 
 };
 
-const isStriclyEqual = ( x: unknown, y: unknown ): boolean => {
+const isStrictlyEqual = ( x: unknown, y: unknown ): boolean => {
 
   return ( x === y ) || ( x !== x && y !== y );
 
@@ -17,4 +17,4 @@ const isStriclyEqual = ( x: unknown, y: unknown ): boolean => {
 
 /* EXPORT */
 
-export {isArray, isObject, isStriclyEqual};
+export {isArray, isObject, isStrictlyEqual};

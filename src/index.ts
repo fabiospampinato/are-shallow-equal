@@ -1,13 +1,13 @@
 
 /* IMPORT */
 
-import {isArray, isObject, isStriclyEqual} from './utils';
+import {isArray, isObject, isStrictlyEqual} from './utils';
 
 /* MAIN */
 
 const areShallowEqual = ( x: any, y: any ): boolean => {
 
-  if ( isStriclyEqual ( x, y ) ) return true;
+  if ( isStrictlyEqual ( x, y ) ) return true;
 
   if ( !isObject ( x ) || !isObject ( y ) ) return false;
 
@@ -17,7 +17,7 @@ const areShallowEqual = ( x: any, y: any ): boolean => {
 
     for ( let i = 0, l = x.length; i < l; i++ ) {
 
-      if ( !isStriclyEqual ( x[i], y[i] ) ) return false;
+      if ( !isStrictlyEqual ( x[i], y[i] ) ) return false;
 
     }
 
@@ -27,7 +27,7 @@ const areShallowEqual = ( x: any, y: any ): boolean => {
 
       if ( !( key in y ) ) return false;
 
-      if ( !isStriclyEqual ( x[key], y[key] ) ) return false;
+      if ( !isStrictlyEqual ( x[key], y[key] ) ) return false;
 
     }
 
