@@ -14,9 +14,6 @@ const isStrictlyEqual = ( x: unknown, y: unknown ): boolean => {
 
 };
 
-// Backward compatibility: keep misspelled export as alias
-const isStriclyEqual = isStrictlyEqual;
-
 /* EXPORT */
 
-export {isArray, isObject, isStrictlyEqual, isStriclyEqual};
+export {isArray, isObject, isStrictlyEqual};
